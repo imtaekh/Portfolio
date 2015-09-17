@@ -4,14 +4,12 @@
   angular.module("portfolio",['ngAnimate'])
     .controller("MenuController",["$scope","$window","$document",function ($scope, $window, $document) {
 
-      $scope.topBottomHeight={height:'0'};
-      $scope.mainHeight={maxHeight:'0'};
+      $scope.mainHeight={maxHeight:'0',maxWidth:"100%"};
 
       $scope.init=function () {
         setTimeout(function () {
           $scope.$apply(function () {
-            $scope.topBottomHeight={height:'50%'};
-            $scope.mainHeight={maxHeight:'400px'};
+            $scope.mainHeight={maxHeight:'400px',maxWidth:'700px'};
           });
         },0);
       };
@@ -48,14 +46,14 @@
               if(!$scope.scroll.interval){
                 $scope.moveTo('menu01');
               }
-              $scope.mainHeight={'max-height':'90%'};
+              $scope.mainHeight.maxHeight='90%';
             });
           }else{
             $scope.$apply(function () {
               if(!$scope.scroll.interval){
                 $scope.moveTo('menu00');
               }
-              $scope.mainHeight={'max-height':'400px'};
+              $scope.mainHeight.maxHeight='400px';
             });
           }
         }
