@@ -36,3 +36,13 @@ body, html{
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.content{
+  max-width: 700px;
+  margin: 0 auto;
+}
+nav{
+  color:white;
+}
+nav li{
+  display: inline-block;
+}
