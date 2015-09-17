@@ -1,11 +1,11 @@
 body, html{
   height: 100%;
-
+  font-family: 'Lato', sans-serif;
 }
 body{
   position: relative;
   margin: 0;
-  transition: height, 3s;
+  transition: height, 2s;
   background-image: url("../images/bg.jpg");
   background-size: cover;
 }
@@ -40,9 +40,13 @@ section{
 }
 nav{
   color:white;
+  text-align: right;
+  padding-right: 40px !important;
 }
 nav li{
   display: inline-block;
+  cursor: pointer;
+  margin: 10px;
 }
 .welcome{
   height: 360px;
