@@ -1,0 +1,38 @@
+body, html{
+  position: relative;
+  margin: 0;
+  height: 100%;
+  background-color: black;
+}
+.top,.bottom{
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: height, 3s;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+}
+.top {
+  background-position: top center;
+  top:0;
+}
+.bottom {
+  background-position: bottom center;
+  bottom:0;
+}
+.mainDiv{
+  overflow: auto;
+  position: absolute;
+  width:100%;
+  height:100%;
+  max-height:0;
+  background-color: #BFBFBF;
+  left:50%;
+  top:50%;
+  transition: max-height, 3s;
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
