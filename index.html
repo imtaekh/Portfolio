@@ -12,16 +12,14 @@
   <body ng-controller="MenuController" ng-init="init()">
     <nav class="content">
       <ul>
-        <li ng-click="moveTo('menu01')">About Me</li>
-        <li ng-click="moveTo('menu02')">Portfolio</li>
-        <li ng-click="moveTo('menu03')">Contact</li>
+        <li ng-repeat="menu in visibleMenu" ng-click="moveTo('{{menu.targetId}}')" class="fade">{{menu.name}}</li>
       </ul>
     </nav>
     <div ng-view class="mainDiv" ng-style="mainHeight">
       <div class="content">
         <section id="menu00">
           <div class="welcome">
-
+            
           </div>
         </section>
         <section id="menu01">

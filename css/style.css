@@ -47,6 +47,32 @@ nav li{
   display: inline-block;
   cursor: pointer;
   margin: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+nav li:hover{
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
+  transition: 1s;
+}
+.fade.ng-enter{
+  transition: 2s;
+  opacity:0;
+}
+.fade.ng-enter-active{
+  opacity: 1;
+}
+
+.fade.ng-leave{
+  transition: 2s;
+  opacity: 1;
+}
+.fade.ng-leave-active{
+ opacity:0;
+}
+
+
+
+.fade.ng-enter-stagger{
+  transition-delay:1s;
 }
 .welcome{
   height: 360px;
