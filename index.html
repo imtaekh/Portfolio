@@ -6,31 +6,40 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100italic,400,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://raw.github.com/daneden/animate.css/master/animate.css">
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body ng-controller="MenuController" ng-init="init()">
     <nav class="content">
+      <h1 ng-if="visibleMenu.length" class="fade menu" ng-click="moveTo('menu00')">Imtaek Hong</h1>
       <ul>
-        <li ng-repeat="menu in visibleMenu" ng-click="moveTo('{{menu.targetId}}')" class="fade">{{menu.name}}</li>
+        <li ng-repeat="menu in visibleMenu" ng-click="moveTo(menu.targetId)" class="fade menu">{{menu.name}}</li>
       </ul>
     </nav>
-    <div ng-view class="mainDiv" ng-style="mainHeight">
-      <div class="content">
-        <section id="menu00">
-          <div class="welcome">
-            
-          </div>
-        </section>
-        <section id="menu01">
-          1111 Lorem<br>ipsum<br>dolor<br>sit<br>amet,<br>consectetur<br>adipisicing<br>elit,<br>sed<br>do<br>eiusmod<br>tempor<br>incididunt<br>ut<br>labore<br>et<br>dolore<br>magna<br>aliqua.<br>Ut<br>enim<br>ad<br>minim<br>veniam,<br>quis<br>nostrud<br>exercitation<br>ullamco<br>laboris<br>nisi<br>ut<br>aliquip<br>ex<br>ea<br>commodo<br>consequat.<br>Duis<br>aute<br>irure<br>dolor<br>in<br>reprehenderit<br>in<br>voluptate<br>velit<br>esse<br>cillum<br>dolore<br>eu<br>fugiat<br>nulla<br>pariatur.<br>Excepteur<br>sint<br>occaecat<br>cupidatat<br>non<br>proident,<br>sunt<br>in<br>culpa<br>qui<br>officia<br>deserunt<br>mollit<br>anim<br>id<br>est<br>laborum.
-        </section>
-        <section id="menu02">
-          2222 Lorem<br>ipsum<br>dolor<br>sit<br>amet,<br>consectetur<br>adipisicing<br>elit,<br>sed<br>do<br>eiusmod<br>tempor<br>incididunt<br>ut<br>labore<br>et<br>dolore<br>magna<br>aliqua.<br>Ut<br>enim<br>ad<br>minim<br>veniam,<br>quis<br>nostrud<br>exercitation<br>ullamco<br>laboris<br>nisi<br>ut<br>aliquip<br>ex<br>ea<br>commodo<br>consequat.<br>Duis<br>aute<br>irure<br>dolor<br>in<br>reprehenderit<br>in<br>voluptate<br>velit<br>esse<br>cillum<br>dolore<br>eu<br>fugiat<br>nulla<br>pariatur.<br>Excepteur<br>sint<br>occaecat<br>cupidatat<br>non<br>proident,<br>sunt<br>in<br>culpa<br>qui<br>officia<br>deserunt<br>mollit<br>anim<br>id<br>est<br>laborum.
-        </section>
-        <section id="menu03">
-          2222 Lorem<br>ipsum<br>dolor<br>sit<br>amet,<br>consectetur<br>adipisicing<br>elit,<br>sed<br>do<br>eiusmod<br>tempor<br>incididunt<br>ut<br>labore<br>et<br>dolore<br>magna<br>aliqua.<br>Ut<br>enim<br>ad<br>minim<br>veniam,<br>quis<br>nostrud<br>exercitation<br>ullamco<br>laboris<br>nisi<br>ut<br>aliquip<br>ex<br>ea<br>commodo<br>consequat.<br>Duis<br>aute<br>irure<br>dolor<br>in<br>reprehenderit<br>in<br>voluptate<br>velit<br>esse<br>cillum<br>dolore<br>eu<br>fugiat<br>nulla<br>pariatur.<br>Excepteur<br>sint<br>occaecat<br>cupidatat<br>non<br>proident,<br>sunt<br>in<br>culpa<br>qui<br>officia<br>deserunt<br>mollit<br>anim<br>id<br>est<br>laborum.
-        </section>
+    <div class="container">
+      <div ng-view class="mainDiv" ng-style="mainHeight">
+        <div class="content">
+          <section id="menu00">
+            <div class="welcome">
+              <h1>Imtaek Hong <small>| Full Stack Web Developer |</small></h1>
+              <p class="summary">
+                "I am passionate about coding and apt at problem solving. I specialized in | Node JS | Angular JS | Javascript | Ruby on rails | HTML/CSS | jQuery | Github |; I also have experience with  | C/C++ | Java | Meteor JS | I'm a quick learner and eager to learn a lot more. I'm ready to join your team in order to create something awesome together!"</p>
+              <ul>
+                <li ng-repeat="menu in welcomeMenu" ng-click="moveTo(menu.targetId)" class="fade">{{menu.name}}</li>
+              </ul>
+            </div>
+          </section>
+          <section id="menu01">
+            1111 Lorem<br>ipsum<br>dolor<br>sit<br>amet,<br>consectetur<br>adipisicing<br>elit,<br>sed<br>do<br>eiusmod<br>tempor<br>incididunt<br>ut<br>labore<br>et<br>dolore<br>magna<br>aliqua.<br>Ut<br>enim<br>ad<br>minim<br>veniam,<br>quis<br>nostrud<br>exercitation<br>ullamco<br>laboris<br>nisi<br>ut<br>aliquip<br>ex<br>ea<br>commodo<br>consequat.<br>Duis<br>aute<br>irure<br>dolor<br>in<br>reprehenderit<br>in<br>voluptate<br>velit<br>esse<br>cillum<br>dolore<br>eu<br>fugiat<br>nulla<br>pariatur.<br>Excepteur<br>sint<br>occaecat<br>cupidatat<br>non<br>proident,<br>sunt<br>in<br>culpa<br>qui<br>officia<br>deserunt<br>mollit<br>anim<br>id<br>est<br>laborum.
+          </section>
+          <section id="menu02">
+            2222 Lorem<br>ipsum<br>dolor<br>sit<br>amet,<br>consectetur<br>adipisicing<br>elit,<br>sed<br>do<br>eiusmod<br>tempor<br>incididunt<br>ut<br>labore<br>et<br>dolore<br>magna<br>aliqua.<br>Ut<br>enim<br>ad<br>minim<br>veniam,<br>quis<br>nostrud<br>exercitation<br>ullamco<br>laboris<br>nisi<br>ut<br>aliquip<br>ex<br>ea<br>commodo<br>consequat.<br>Duis<br>aute<br>irure<br>dolor<br>in<br>reprehenderit<br>in<br>voluptate<br>velit<br>esse<br>cillum<br>dolore<br>eu<br>fugiat<br>nulla<br>pariatur.<br>Excepteur<br>sint<br>occaecat<br>cupidatat<br>non<br>proident,<br>sunt<br>in<br>culpa<br>qui<br>officia<br>deserunt<br>mollit<br>anim<br>id<br>est<br>laborum.
+          </section>
+          <section id="menu03">
+            2222 Lorem<br>ipsum<br>dolor<br>sit<br>amet,<br>consectetur<br>adipisicing<br>elit,<br>sed<br>do<br>eiusmod<br>tempor<br>incididunt<br>ut<br>labore<br>et<br>dolore<br>magna<br>aliqua.<br>Ut<br>enim<br>ad<br>minim<br>veniam,<br>quis<br>nostrud<br>exercitation<br>ullamco<br>laboris<br>nisi<br>ut<br>aliquip<br>ex<br>ea<br>commodo<br>consequat.<br>Duis<br>aute<br>irure<br>dolor<br>in<br>reprehenderit<br>in<br>voluptate<br>velit<br>esse<br>cillum<br>dolore<br>eu<br>fugiat<br>nulla<br>pariatur.<br>Excepteur<br>sint<br>occaecat<br>cupidatat<br>non<br>proident,<br>sunt<br>in<br>culpa<br>qui<br>officia<br>deserunt<br>mollit<br>anim<br>id<br>est<br>laborum.
+          </section>
+        </div>
       </div>
     </div>
   </body>

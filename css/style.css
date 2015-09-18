@@ -9,6 +9,12 @@ body{
   background-image: url("../images/bg.jpg");
   background-size: cover;
 }
+.container{
+  position: absolute;
+  top:40px;
+  bottom:0;
+  width: 100%;
+}
 .mainDiv{
   overflow: auto;
   position: absolute;
@@ -20,36 +26,45 @@ body{
   top:50%;
   border-radius: 10px;
   transition: max-height, 3s;
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
   box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
 }
 .content{
-  padding: 0 10px;
-  max-width: 700px;
+  max-width: 650px;
   margin: 0 auto;
 }
 section{
   padding-top: 20px;
   margin-bottom: 50px;
 }
+section div{
+  overflow: auto;
+}
 nav{
+  overflow: auto;
   color:white;
   text-align: right;
   padding-right: 40px !important;
 }
+nav h1{
+  float: left;
+  margin: 17px;
+}
 nav li{
   display: inline-block;
-  cursor: pointer;
   margin: 10px;
+}
+nav .menu{
+  cursor: pointer;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
-nav li:hover{
+nav .menu:hover{
   border-bottom: 2px solid rgba(255, 255, 255, 1);
   transition: 1s;
 }
@@ -60,7 +75,6 @@ nav li:hover{
 .fade.ng-enter-active{
   opacity: 1;
 }
-
 .fade.ng-leave{
   transition: 2s;
   opacity: 1;
@@ -68,13 +82,60 @@ nav li:hover{
 .fade.ng-leave-active{
  opacity:0;
 }
-
-
-
 .fade.ng-enter-stagger{
   transition-delay:1s;
 }
 .welcome{
+  color: #434A54;
   height: 360px;
-  background-color: yellow;
+}
+.welcome h1{
+  color: #f35626;
+  background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 60s infinite linear;
+}
+.welcome small{
+  font-size: 0.7em;
+  font-weight: 400;
+}
+.welcome ul{
+  padding: 0;
+  text-align: center;
+}
+.welcome li{
+  margin: 10px 0;
+  list-style-type: none;
+  cursor: pointer;
+
+}
+.summary{
+  position: relative;
+  margin: 20px 0;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 100;
+  font-style: italic;
+  left: 650px;
+  -webkit-animation: fromRight 1s ease 2s forwards;
+}
+@-webkit-keyframes fromRight {
+  from {
+    left: 650px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
 }

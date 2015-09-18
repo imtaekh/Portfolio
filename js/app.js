@@ -12,6 +12,13 @@
             $scope.mainHeight={maxHeight:'400px',maxWidth:'700px'};
           });
         },0);
+        setTimeout(function () {
+          $scope.$apply(function () {
+            for (var i = 0; i < $scope.menuItem.length; i++) {
+              $scope.welcomeMenu.push($scope.menuItem[i]);
+            }
+          });
+        },3000);
       };
 
       $scope.mainDiv = document.querySelector('.mainDiv');
@@ -19,6 +26,7 @@
       $scope.scroll={action:false,current:0,to:null,interval:null};
 
       $scope.visibleMenu=[];
+      $scope.welcomeMenu=[];
       $scope.menuItem=[
         {name:"About Me",targetId:"menu01"},
         {name:"Portfolio",targetId:"menu02"},
