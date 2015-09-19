@@ -9,7 +9,7 @@
       $scope.init=function () {
         setTimeout(function () {
           $scope.$apply(function () {
-            $scope.mainHeight={maxHeight:'400px',maxWidth:'700px'};
+            $scope.mainHeight={maxHeight:"400px", maxWidth:'700px'};
           });
         },0);
         setTimeout(function () {
@@ -56,7 +56,6 @@
       $scope.mainDiv.addEventListener('scroll', function () {
         var currentY=$scope.mainDiv.scrollTop;
         if($scope.mainDiv.scrollTop > 0 && $scope.mainDiv.scrollTop < $scope.contentStart && !$scope.scroll.action){
-          console.log($scope.scroll.action);
           $scope.scroll.action=true;
           if(currentY>$scope.scroll.current){
             $scope.$apply(function () {
@@ -77,6 +76,10 @@
               $scope.visibleMenu=[];
             });
           }
+        } else if($scope.scroll.action && $scope.mainDiv.scrollTop > $scope.contentStart ){
+          console.log("hi");
+          $scope.scroll.action=false;
+          clearInterval($scope.scroll.interval);
         } else if($scope.mainDiv.scrollTop===0 || $scope.mainDiv.scrollTop>=$scope.contentStart){
           $scope.scroll.action=false;
         }
