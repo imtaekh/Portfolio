@@ -11,8 +11,8 @@ body{
 }
 .container{
   position: absolute;
-  top:40px;
-  bottom:0;
+  top: 60px;
+  bottom: 20px;
   width: 100%;
 }
 .mainDiv{
@@ -37,6 +37,7 @@ body{
 }
 .content{
   padding: 0 25px;
+  color: #434A54;
 }
 section{
   padding-top: 20px;
@@ -87,7 +88,6 @@ nav .menu:hover{
   transition-delay:0.5s;
 }
 .welcome{
-  color: #434A54;
   height: 380px;
 }
 .welcome h1{
@@ -107,6 +107,7 @@ nav .menu:hover{
   text-align: center;
 }
 .welcome .welcome_menu_item{
+  overflow: hidden;
   display: inline-block;
   margin: 5px 30px;
   height: 120px;
@@ -158,6 +159,12 @@ nav .menu:hover{
   font-weight: 400;
   font-style: italic;
   margin: 15px 0;
+}
+.about{
+
+}
+.about i{
+  font-family: 'Great Vibes', cursive;
 }
 @-webkit-keyframes fromRight {
   from {

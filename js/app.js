@@ -55,35 +55,33 @@
         },1);
       };
       $scope.mainDiv.addEventListener('scroll', function () {
-        var currentY=$scope.mainDiv.scrollTop;
-        if($scope.mainDiv.scrollTop > 0 && $scope.mainDiv.scrollTop < $scope.contentStart && !$scope.scroll.action){
-          $scope.scroll.action=true;
-          if(currentY>$scope.scroll.current){
-            $scope.$apply(function () {
-              if(!$scope.scroll.interval){
-                $scope.moveTo('section02');
+        $scope.$apply(function () {
+          var currentY=$scope.mainDiv.scrollTop;
+          if(currentY > 0 && currentY < $scope.contentStart){
+            // force scroll zone
+            if(currentY>$scope.scroll.current){
+              clearInterval($scope.scroll.interval);
+              $scope.moveTo('section02');
+              $scope.mainHeight.maxHeight='100%';
+              if(!$scope.visibleMenu.length){
+                for (var i = 0; i < $scope.menuItem.length; i++) {
+                  $scope.visibleMenu.push($scope.menuItem[i]);
+                }
               }
-              $scope.mainHeight.maxHeight='90%';
-              for (var i = 0; i < $scope.menuItem.length; i++) {
-                $scope.visibleMenu.push($scope.menuItem[i]);
-              }
-            });
-          } else {
-            $scope.$apply(function () {
-              if(!$scope.scroll.interval){
-                $scope.moveTo('section00');
-              }
+            } else {
+              clearInterval($scope.scroll.interval);
+              $scope.moveTo('section00');
               $scope.mainHeight.maxHeight='400px';
               $scope.visibleMenu=[];
-            });
+            }
+          } else if (($scope.scroll.interval) &&
+              ((currentY > $scope.scroll.current && currentY > $scope.scroll.to)||(currentY < $scope.scroll.current && currentY < $scope.scroll.to))){
+            // $scope.moveTo() cancel event
+            clearInterval($scope.scroll.interval);
+            $scope.scroll.interval=null;
           }
-        } else if($scope.scroll.action && currentY>$scope.scroll.current && $scope.mainDiv.scrollTop > $scope.scroll.to){
-          $scope.scroll.action=false;
-          clearInterval($scope.scroll.interval);
-        } else if($scope.mainDiv.scrollTop===0 || $scope.mainDiv.scrollTop>=$scope.contentStart){
-          $scope.scroll.action=false;
-        }
-        $scope.scroll.current=currentY;
+          $scope.scroll.current=currentY;
+        });
       });
     }]);
 }());
