@@ -35,9 +35,12 @@ body{
   -moz-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
   box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
 }
-.content{
-  max-width: 650px;
+.header{
+  width: 700px;
   margin: 0 auto;
+}
+.content{
+  padding: 0 25px;
 }
 section{
   padding-top: 20px;
@@ -50,7 +53,6 @@ nav{
   overflow: auto;
   color:white;
   text-align: right;
-  padding-right: 40px !important;
 }
 nav h1{
   float: left;
@@ -59,6 +61,7 @@ nav h1{
 nav li{
   display: inline-block;
   margin: 10px;
+  padding-right: 10px;
 }
 nav .menu{
   cursor: pointer;
@@ -100,15 +103,27 @@ nav .menu:hover{
   font-size: 0.7em;
   font-weight: 400;
 }
-.welcome ul{
+.welcome .welcome_menu{
   padding: 0;
   text-align: center;
 }
-.welcome li{
-  margin: 10px 0;
+.welcome .welcome_menu_item{
+  display: inline-block;
+  margin: 5px 30px;
   list-style-type: none;
   cursor: pointer;
-
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+.welcome .mint.welcome_menu_item:hover{
+  background-color: rgba(0, 255, 255, 0.4);
+  transition: 1s;
+}
+.welcome .welcome_menu_item img{
+  width: 80px;
+  height: 80px;
+  border: 7px solid rgba(255,255,255,0.7);
+  border-radius: 50%;
 }
 .summary{
   position: relative;
@@ -117,7 +132,7 @@ nav .menu:hover{
   font-size: 20px;
   font-weight: 100;
   font-style: italic;
-  left: 650px;
+  left: 1000px;
   -webkit-animation: fromRight 1s ease 2s forwards;
 }
 @-webkit-keyframes fromRight {

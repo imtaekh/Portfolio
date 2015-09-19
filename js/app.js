@@ -28,9 +28,9 @@
       $scope.visibleMenu=[];
       $scope.welcomeMenu=[];
       $scope.menuItem=[
-        {name:"About Me",targetId:"menu01"},
-        {name:"Portfolio",targetId:"menu02"},
-        {name:"Contact",targetId:"menu03"}
+        {name:"About Me"  , imgUrl:"images/menu_about.jpg"     , targetId:"menu01", class:"mint"},
+        {name:"Portfolio" , imgUrl:"images/menu_portfolio.png" , targetId:"menu02", class:"yellow"},
+        {name:"Contact"   , imgUrl:"images/menu_contact.jpg"   , targetId:"menu03", class:"blue"}
       ];
 
       $scope.moveTo=function (target) {

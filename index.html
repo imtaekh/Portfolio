@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body ng-controller="MenuController" ng-init="init()">
-    <nav class="content">
+    <nav class="header">
       <h1 ng-if="visibleMenu.length" class="fade menu" ng-click="moveTo('menu00')">Imtaek Hong</h1>
       <ul>
         <li ng-repeat="menu in visibleMenu" ng-click="moveTo(menu.targetId)" class="fade menu">{{menu.name}}</li>
@@ -25,9 +25,12 @@
               <h1>Imtaek Hong <small>| Full Stack Web Developer |</small></h1>
               <p class="summary">
                 "I am passionate about coding and apt at problem solving. I specialized in | Node JS | Angular JS | Javascript | Ruby on rails | HTML/CSS | jQuery | Github |; I also have experience with  | C/C++ | Java | Meteor JS | I'm a quick learner and eager to learn a lot more. I'm ready to join your team in order to create something awesome together!"</p>
-              <ul>
-                <li ng-repeat="menu in welcomeMenu" ng-click="moveTo(menu.targetId)" class="fade">{{menu.name}}</li>
-              </ul>
+              <div class="welcome_menu">
+                <div ng-repeat="menu in welcomeMenu" ng-click="moveTo(menu.targetId)" class="fade welcome_menu_item">
+                  <img ng-src="{{menu.imgUrl}}"/><br>
+                  {{menu.name}}
+                </div>
+              </div>
             </div>
           </section>
           <section id="menu01">
