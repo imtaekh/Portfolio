@@ -88,8 +88,10 @@ nav .menu:hover{
 }
 .welcome{
   color: #434A54;
+  height: 380px;
 }
 .welcome h1{
+  margin: 15px;
   color: #f35626;
   background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
   -webkit-background-clip: text;
@@ -130,7 +132,7 @@ nav .menu:hover{
   border: 7px solid rgba(255,255,255,0.7);
   border-radius: 50%;
 }
-.summary{
+.welcome .summary{
   width: 630px;
   line-height: 27px;
   position: relative;
@@ -142,10 +144,20 @@ nav .menu:hover{
   left: 1000px;
   -webkit-animation: fromRight 1s ease 2s forwards;
 }
-.summary span{
+.welcome .summary span{
   color: black;
   font-weight: 400;
   font-style: italic;
+}
+.skills{
+  padding-top: 100px;
+  text-align: center;
+}
+.skills h1{
+  font-size: 2em;
+  font-weight: 400;
+  font-style: italic;
+  margin: 15px 0;
 }
 @-webkit-keyframes fromRight {
   from {
