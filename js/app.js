@@ -22,20 +22,21 @@
       };
 
       $scope.mainDiv = document.querySelector('.mainDiv');
-      $scope.contentStart = document.getElementById('menu01').offsetTop;
+      $scope.contentStart = document.getElementById('section01').offsetTop;
       $scope.scroll={action:false,current:0,to:null,interval:null};
 
       $scope.visibleMenu=[];
       $scope.welcomeMenu=[];
       $scope.menuItem=[
-        {name:"About Me"  , imgUrl:"images/menu_about.jpg"     , targetId:"menu01", class:"mint"},
-        {name:"Portfolio" , imgUrl:"images/menu_portfolio.png" , targetId:"menu02", class:"yellow"},
-        {name:"Contact"   , imgUrl:"images/menu_contact.jpg"   , targetId:"menu03", class:"blue"}
+        {name:"About Me"  , imgUrl:"images/menu_about.jpg"     , targetId:"section02"},
+        {name:"Portfolio" , imgUrl:"images/menu_portfolio.png" , targetId:"section03"},
+        {name:"Contact"   , imgUrl:"images/menu_contact.jpg"   , targetId:"section04"}
       ];
 
       $scope.moveTo=function (target) {
         var currentY=$scope.mainDiv.scrollTop;
         $scope.scroll.to=document.getElementById(target).offsetTop;
+        console.log(target);
         console.log("currentY",currentY);
         console.log("$scope.scroll.to",$scope.scroll.to);
         $scope.scroll.interval=setInterval(function () {
@@ -60,24 +61,23 @@
           if(currentY>$scope.scroll.current){
             $scope.$apply(function () {
               if(!$scope.scroll.interval){
-                $scope.moveTo('menu01');
+                $scope.moveTo('section02');
               }
               $scope.mainHeight.maxHeight='90%';
               for (var i = 0; i < $scope.menuItem.length; i++) {
                 $scope.visibleMenu.push($scope.menuItem[i]);
               }
             });
-          }else{
+          } else {
             $scope.$apply(function () {
               if(!$scope.scroll.interval){
-                $scope.moveTo('menu00');
+                $scope.moveTo('section00');
               }
               $scope.mainHeight.maxHeight='400px';
               $scope.visibleMenu=[];
             });
           }
-        } else if($scope.scroll.action && $scope.mainDiv.scrollTop > $scope.contentStart ){
-          console.log("hi");
+        } else if($scope.scroll.action && currentY>$scope.scroll.current && $scope.mainDiv.scrollTop > $scope.scroll.to){
           $scope.scroll.action=false;
           clearInterval($scope.scroll.interval);
         } else if($scope.mainDiv.scrollTop===0 || $scope.mainDiv.scrollTop>=$scope.contentStart){

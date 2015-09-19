@@ -32,36 +32,34 @@ body{
        -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
-  box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
-}
-.header{
-  width: 700px;
-  margin: 0 auto;
+     -moz-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
+          box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
 }
 .content{
   padding: 0 25px;
 }
 section{
   padding-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 }
 section div{
   overflow: auto;
 }
 nav{
+  width: 680px;
+  margin: 0 auto;
+  padding: 0 10px;
   overflow: auto;
   color:white;
   text-align: right;
 }
 nav h1{
   float: left;
-  margin: 17px;
+  margin: 17px 10px;
 }
 nav li{
   display: inline-block;
   margin: 10px;
-  padding-right: 10px;
 }
 nav .menu{
   cursor: pointer;
@@ -86,11 +84,10 @@ nav .menu:hover{
  opacity:0;
 }
 .fade.ng-enter-stagger{
-  transition-delay:1s;
+  transition-delay:0.5s;
 }
 .welcome{
   color: #434A54;
-  height: 360px;
 }
 .welcome h1{
   color: #f35626;
@@ -110,14 +107,22 @@ nav .menu:hover{
 .welcome .welcome_menu_item{
   display: inline-block;
   margin: 5px 30px;
+  height: 120px;
   list-style-type: none;
   cursor: pointer;
   padding: 10px 10px;
   border-radius: 10px;
 }
-.welcome .mint.welcome_menu_item:hover{
-  background-color: rgba(0, 255, 255, 0.4);
-  transition: 1s;
+.welcome .welcome_menu_item:first-child{
+  margin-left: 0;
+}
+.welcome .welcome_menu_item:last-child{
+  margin-right: 0;
+}
+.welcome .welcome_menu_item:hover{
+  color: #52ACFF;
+  font-size: 1.2em;
+  transition: 0.5s;
 }
 .welcome .welcome_menu_item img{
   width: 80px;
@@ -127,14 +132,20 @@ nav .menu:hover{
 }
 .summary{
   width: 630px;
+  line-height: 27px;
   position: relative;
-  margin: 20px 0;
+  margin: 10px 0;
   padding-left: 20px;
-  font-size: 20px;
-  font-weight: 100;
+  font-size: 19px;
+  font-weight: 300;
   font-style: italic;
   left: 1000px;
   -webkit-animation: fromRight 1s ease 2s forwards;
+}
+.summary span{
+  color: black;
+  font-weight: 400;
+  font-style: italic;
 }
 @-webkit-keyframes fromRight {
   from {
