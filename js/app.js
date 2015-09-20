@@ -11,7 +11,7 @@
           $scope.$apply(function () {
             $scope.mainHeight={maxHeight:"400px", maxWidth:'700px',transition: "max-height, 3s"};
           });
-        },1000);
+        }, 200);
         setTimeout(function () {
           $scope.$apply(function () {
             for (var i = 0; i < $scope.menuItem.length; i++) {
