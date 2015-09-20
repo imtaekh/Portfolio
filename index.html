@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body ng-controller="MenuController" ng-init="init()">
-    <div class="debug">
+    <div class="debug" ng-if="false">
       S:{{contentStart}} Y:{{mainDiv.scrollTop}} action:{{scroll.action}}
     </div>
     <nav>
@@ -38,6 +38,7 @@
             </div>
           </section>
           <section id="section01" class="skills">
+            <div class="shadow_down"></div>
               <h1>MEAN STACK</h1>
               <h1>MONGO DB</h1>
               <h1>EXPRESS JS</h1>
@@ -57,18 +58,32 @@
               <h1>JAVA</h1>
               <h1>GIT</h1>
               <h1>GITHUB</h1>
+            <div class="shadow_up"></div>
           </section>
           <section id="section02" class="about">
             <article class="">
-              <h1>Konkuk University</h1>
-              <h3>Bachelor of Science in Microbiological Engineering	</h3>
-              <i> ~ Feb 2012</i>
-              <p>I studied Microbiological Engineering which involved learning how to process something useful for humans like substances for cosmetics, foods and medicines using microorganisms and their DNA. I was interested in learning how DNA works so I also worked in an Avellino gene test team checking human DNA mutation.</p>
+              <i>Jun 2015 ~ Sep 2015</i>
+              <h1>General Assembly <span>Los Angeles, CA</span></h1>
+              <p>Over 600 hours of MEAN stack(MongoDB, ExpressJS, AngularJS NodeJS), Ruby on rails, PostgreSQL, Meteor JS,  jQuery, Javascript, etc. and 4 projects during the course.</p>
             </article>
+
             <article class="">
-              <h1>Konkuk University</h1>
-              <h3>Bachelor of Science in Microbiological Engineering	</h3>
-              <i> ~ Feb 2012</i>
+              <i>Jan 2014 ~ Jan 2015</i>
+              <h1>KT&C USA <span>Los Angeles, CA</span></h1>
+              <h4>Inside Sales</h4>
+              <p>Processed daily purchase orders and generate invoices & shipping orders and also managed warehouse and warehouse worker(s). I worked in fast-paced environment and have to cover different departments jobs like programming products, working on quickbooks, etc.</p>
+            </article>
+
+            <article class="">
+              <i>Nov 2012 ~ Jan 2014</i>
+              <h1>Law Offices Of Jerry Kaufman <span>Los Angeles, CA</span></h1>
+              <h4>Paralegal</h4>
+              <p>Conducted initial consultation with clients and managed new clients intake process, also researched and developed strategies for client cases, completed various legal forms. I learned to follow extremely strict workflows and making documentation.</p>
+            </article>
+
+            <article class="">
+              <i>Feb 2012</i>
+              <h1>Konkuk University <span>Seoul, South Korea</span></h1>
               <p>Studied Microbiological Engineering which involved learning how to process something useful for humans like substances for cosmetics, foods and medicines using microorganisms and their DNA. I was interested in learning how DNA works so I also worked in an Avellino gene test team checking human DNA mutation.</p>
             </article>
           </section>
