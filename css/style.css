@@ -9,6 +9,27 @@ body{
   background-image: url("../images/bg.jpg");
   background-size: cover;
 }
+a{
+  color:tomato;
+  text-decoration: none;
+  border-bottom: 1px dashed tomato;
+}
+a:hover{
+  color:tomato;
+  text-decoration: none;
+}
+a:active{
+  color:tomato;
+  text-decoration: none;
+}
+a:visited{
+  color:tomato;
+  text-decoration: none;
+}
+a:link{
+  color:tomato;
+  text-decoration: none;
+}
 .container{
   position: absolute;
   top: 60px;
@@ -39,6 +60,7 @@ body{
   color: #434A54;
 }
 section{
+  position: relative;
   padding-top: 20px;
   margin-bottom: 150px;
 }
@@ -185,7 +207,7 @@ nav .actived{
 .about article img{
   width: 150px;
   float: left;
-  border: 10px solid white;
+  border: 10px solid #fcfcfc;
   margin-left: 10px;
   border-radius: 50%;
 }
@@ -200,6 +222,14 @@ nav .actived{
 }
 .about i{
   font-family: 'Dancing Script', cursive;
+}
+.about .line {
+  position: absolute;
+  border-left: 4px solid #d0eaea;
+  left: 95px;
+  top: 50px;
+  bottom: 50px;
+  z-index: -1;
 }
 @-webkit-keyframes fromRight {
   from {

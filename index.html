@@ -18,7 +18,7 @@
         <li ng-repeat="menu in visibleMenu" ng-click="moveTo(menu.targetId)" class="fade menu ng-class:{'actived':scroll.current>=menu.yStart&&scroll.current<menu.yEnd}">{{menu.name}}</li>
       </ul>
     </nav>
-    <div class="debug" ng-if="true">
+    <div class="debug" ng-if="false">
       S:{{contentStart}} Y:{{mainDiv.scrollTop}} action:{{scroll.action}}
     </div>
     <div class="container">
@@ -61,16 +61,16 @@
             <div class="shadow_up"></div>
           </section>
           <section id="section02" class="about">
-
-            <article class="">
+            <div class="line"></div>
+            <article>
               <img src="./images/about_me.jpg" />
               <div>
                 <h1>Imtaek Hong</h1>
-                <p>I was born and raised in South Korea and moved to US in 2012 and obtained permanent residence(Green Card holder). I'm currently looking for a job.<br> </p>
+                <p>I was born and raised in South Korea and moved to US in 2012 and obtained permanent residence(Green Card holder).<br>I'm currently looking for a job.<br> <a href="resume.pdf" target="_blank">Download Resume</a></p>
               </div>
             </article>
 
-            <article class="">
+            <article>
               <img src="./images/about_ga.jpg" />
               <div>
                 <i>Jun 2015 ~ Sep 2015</i>
@@ -79,7 +79,7 @@
               </div>
             </article>
 
-            <article class="">
+            <article>
               <img src="./images/about_ktnc.jpg" />
               <div>
                 <i>Jan 2014 ~ Jan 2015</i>
@@ -89,7 +89,7 @@
               </div>
             </article>
 
-            <article class="">
+            <article>
               <img src="./images/about_jk.jpg" />
               <div>
                 <i>Nov 2012 ~ Jan 2014</i>
@@ -99,7 +99,7 @@
               </div>
             </article>
 
-            <article class="">
+            <article>
               <img src="./images/about_ku.jpg" />
               <div>
                 <i>Feb 2012</i>
