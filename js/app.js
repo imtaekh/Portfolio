@@ -32,13 +32,22 @@
         {name:"Portfolio" , imgUrl:"images/menu_portfolio.png" , targetId:"section03"},
         {name:"Contact"   , imgUrl:"images/menu_contact.jpg"   , targetId:"section04"}
       ];
+      setTimeout(function () {
+        $scope.$apply(function () {
+          console.log(document.getElementById("section04").offsetTop);
+          $scope.menuItem[0].yStart=document.getElementById("section02").offsetTop;
+          $scope.menuItem[0].yEnd=document.getElementById("section03").offsetTop;
+          $scope.menuItem[1].yStart=document.getElementById("section03").offsetTop;
+          $scope.menuItem[1].yEnd=document.getElementById("section04").offsetTop;
+          $scope.menuItem[2].yStart=document.getElementById("section04").offsetTop;
+          $scope.menuItem[2].yEnd=document.getElementById("section04").offsetTop+document.getElementById("section04").offsetHeight;
+        });
+      },1000);
 
       $scope.moveTo=function (target) {
         var currentY=$scope.mainDiv.scrollTop;
         $scope.scroll.to=document.getElementById(target).offsetTop;
-        console.log(target);
-        console.log("currentY",currentY);
-        console.log("$scope.scroll.to",$scope.scroll.to);
+        clearInterval($scope.scroll.interval);
         $scope.scroll.interval=setInterval(function () {
           if($scope.mainDiv.scrollTop<$scope.scroll.to-10){
             $scope.mainDiv.scrollTop+=3;

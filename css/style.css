@@ -64,8 +64,13 @@ nav li{
 nav .menu{
   cursor: pointer;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
+  transition: border-bottom, 1s;
 }
 nav .menu:hover{
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transition: 1s;
+}
+nav .actived{
   border-bottom: 2px solid rgba(255, 255, 255, 1);
   transition: 1s;
 }
@@ -141,7 +146,7 @@ nav .menu:hover{
   font-size: 19px;
   font-weight: 300;
   font-style: italic;
-  left: 1000px;
+  left: 100%;
   -webkit-animation: fromRight 1s ease 2s forwards;
 }
 .welcome .summary span{
@@ -172,9 +177,20 @@ nav .menu:hover{
 }
 .about article{
   margin-bottom: 50px;
+  overflow: auto;
 }
 .about h1, .about h4, .about p{
   margin: 10px 0;
+}
+.about article img{
+  width: 150px;
+  float: left;
+  border: 10px solid white;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+.about article div{
+  padding: 20px;
 }
 .about h1 span{
   font-size: 0.9em;
@@ -183,11 +199,11 @@ nav .menu:hover{
   padding-left: 10px;
 }
 .about i{
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 @-webkit-keyframes fromRight {
   from {
-    left: 650px;
+    left: 100%;
   }
 
   to {

@@ -7,20 +7,20 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lato:400italic,300italic,400,900' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://raw.github.com/daneden/animate.css/master/animate.css">
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body ng-controller="MenuController" ng-init="init()">
-    <div class="debug" ng-if="false">
-      S:{{contentStart}} Y:{{mainDiv.scrollTop}} action:{{scroll.action}}
-    </div>
     <nav>
       <h1 ng-if="visibleMenu.length" class="fade menu" ng-click="moveTo('section00')">Imtaek Hong</h1>
       <ul>
-        <li ng-repeat="menu in visibleMenu" ng-click="moveTo(menu.targetId)" class="fade menu">{{menu.name}}</li>
+        <li ng-repeat="menu in visibleMenu" ng-click="moveTo(menu.targetId)" class="fade menu ng-class:{'actived':scroll.current>=menu.yStart&&scroll.current<menu.yEnd}">{{menu.name}}</li>
       </ul>
     </nav>
+    <div class="debug" ng-if="true">
+      S:{{contentStart}} Y:{{mainDiv.scrollTop}} action:{{scroll.action}}
+    </div>
     <div class="container">
       <div ng-view class="mainDiv" ng-style="mainHeight">
         <div class="content">
@@ -61,30 +61,51 @@
             <div class="shadow_up"></div>
           </section>
           <section id="section02" class="about">
+
             <article class="">
-              <i>Jun 2015 ~ Sep 2015</i>
-              <h1>General Assembly <span>Los Angeles, CA</span></h1>
-              <p>Over 600 hours of MEAN stack(MongoDB, ExpressJS, AngularJS NodeJS), Ruby on rails, PostgreSQL, Meteor JS,  jQuery, Javascript, etc. and 4 projects during the course.</p>
+              <img src="./images/about_me.jpg" />
+              <div>
+                <h1>Imtaek Hong</h1>
+                <p>I was born and raised in South Korea and moved to US in 2012 and obtained permanent residence(Green Card holder). I'm currently looking for a job.<br> </p>
+              </div>
             </article>
 
             <article class="">
-              <i>Jan 2014 ~ Jan 2015</i>
-              <h1>KT&C USA <span>Los Angeles, CA</span></h1>
-              <h4>Inside Sales</h4>
-              <p>Processed daily purchase orders and generate invoices & shipping orders and also managed warehouse and warehouse worker(s). I worked in fast-paced environment and have to cover different departments jobs like programming products, working on quickbooks, etc.</p>
+              <img src="./images/about_ga.jpg" />
+              <div>
+                <i>Jun 2015 ~ Sep 2015</i>
+                <h1>General Assembly <span>Los Angeles, CA</span></h1>
+                <p>Over 600 hours of MEAN stack(MongoDB, ExpressJS, AngularJS, NodeJS), Ruby on rails, PostgreSQL, Meteor JS,  jQuery, Javascript, etc. and 4 projects during the course.</p>
+              </div>
             </article>
 
             <article class="">
-              <i>Nov 2012 ~ Jan 2014</i>
-              <h1>Law Offices Of Jerry Kaufman <span>Los Angeles, CA</span></h1>
-              <h4>Paralegal</h4>
-              <p>Conducted initial consultation with clients and managed new clients intake process, also researched and developed strategies for client cases, completed various legal forms. I learned to follow extremely strict workflows and making documentation.</p>
+              <img src="./images/about_ktnc.jpg" />
+              <div>
+                <i>Jan 2014 ~ Jan 2015</i>
+                <h1>KT&C USA <span>Los Angeles, CA</span></h1>
+                <h4>Inside Sales</h4>
+                <p>Processed daily purchase orders and generated invoices & shipping orders, and also managed warehouse. I worked in fast-paced environment and had to cover other roles.</p>
+              </div>
             </article>
 
             <article class="">
-              <i>Feb 2012</i>
-              <h1>Konkuk University <span>Seoul, South Korea</span></h1>
-              <p>Studied Microbiological Engineering which involved learning how to process something useful for humans like substances for cosmetics, foods and medicines using microorganisms and their DNA. I was interested in learning how DNA works so I also worked in an Avellino gene test team checking human DNA mutation.</p>
+              <img src="./images/about_jk.jpg" />
+              <div>
+                <i>Nov 2012 ~ Jan 2014</i>
+                <h1>Law Offices Of Jerry Kaufman <span>Los Angeles, CA</span></h1>
+                <h4>Paralegal</h4>
+                <p>Conducted initial consultation and managed new clients intake process, also researched and developed strategies for client cases, completed various legal forms</p>
+              </div>
+            </article>
+
+            <article class="">
+              <img src="./images/about_ku.jpg" />
+              <div>
+                <i>Feb 2012</i>
+                <h1>Konkuk University <span>Seoul, South Korea</span></h1>
+                <p>Studied Microbiological Engineering which involved learning how to process substances for cosmetics, foods and medicines using microorganisms and their DNA. I also worked in an Avellino gene test team checking human DNA mutation.</p>
+              </div>
             </article>
           </section>
           <section id="section03">
