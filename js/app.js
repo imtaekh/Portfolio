@@ -46,7 +46,7 @@
 
       $scope.moveTo=function (target) {
         var currentY=$scope.mainDiv.scrollTop;
-        $scope.scroll.to=document.getElementById(target).offsetTop;
+        if(target) $scope.scroll.to=document.getElementById(target).offsetTop;
         clearInterval($scope.scroll.interval);
         $scope.scroll.interval=setInterval(function () {
           if($scope.mainDiv.scrollTop<$scope.scroll.to-10){
@@ -60,6 +60,7 @@
           }else{
             clearInterval($scope.scroll.interval);
             $scope.scroll.interval=null;
+            $scope.scroll.to=null;
           }
         },1);
       };
@@ -69,8 +70,11 @@
           if(currentY > 0 && currentY < $scope.contentStart){
             // force scroll zone
             if(currentY>$scope.scroll.current){
-              clearInterval($scope.scroll.interval);
-              $scope.moveTo('section02');
+              if($scope.scroll.to){
+                $scope.moveTo();
+              } else{
+                $scope.moveTo('section02');
+              }
               $scope.mainHeight.maxHeight='100%';
               if(!$scope.visibleMenu.length){
                 for (var i = 0; i < $scope.menuItem.length; i++) {
@@ -78,7 +82,6 @@
                 }
               }
             } else {
-              clearInterval($scope.scroll.interval);
               $scope.moveTo('section00');
               $scope.mainHeight.maxHeight='400px';
               $scope.visibleMenu=[];
