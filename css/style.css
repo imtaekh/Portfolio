@@ -231,6 +231,29 @@ nav .actived{
   bottom: 50px;
   z-index: -1;
 }
+.portfolio article{
+  margin-bottom: 50px;
+  overflow: auto;
+}
+.portfolio h1, .portfolio h4, .portfolio p{
+  margin: 10px 0;
+}
+.portfolio h4{
+  font-weight:300;
+  font-style:italic
+}
+.portfolio div{
+  margin-left: 70px;
+}
+.portfolio article img{
+  width: 200px;
+  float: right;
+  border: 7px solid #fcfcfc;
+  margin: 40px 0 0 10px;
+  -webkit-box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
+  box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
+}
 @-webkit-keyframes fromRight {
   from {
     left: 100%;
