@@ -109,7 +109,7 @@
           }
           $scope.scroll.current=currentY;
           //portfolio side bar control
-          if(currentY > $scope.menuItem[1].yStart && currentY+$scope.mainDiv.clientHeight < $scope.menuItem[1].yEnd+220){
+          if(currentY > $scope.menuItem[1].yStart && currentY < $scope.menuItem[1].yEnd-document.querySelector(".side_bar").clientHeight){
             document.querySelector('.side_bar').style.top=currentY-$scope.menuItem[1].yStart+20+"px";
           } else if(currentY<$scope.menuItem[1].yStart && document.querySelector('.side_bar').style.top!="20px"){
             document.querySelector('.side_bar').style.top="20px";
