@@ -65,11 +65,11 @@
         clearInterval($scope.scroll.interval);
         $scope.scroll.interval=setInterval(function () {
           if($scope.mainDiv.scrollTop<$scope.scroll.to-10){
-            $scope.mainDiv.scrollTop+=3;
+            $scope.mainDiv.scrollTop+=6;
           }else if($scope.mainDiv.scrollTop<$scope.scroll.to){
             $scope.mainDiv.scrollTop+=1;
           }else if($scope.mainDiv.scrollTop>$scope.scroll.to+10){
-            $scope.mainDiv.scrollTop-=3;
+            $scope.mainDiv.scrollTop-=6;
           }else if($scope.mainDiv.scrollTop>$scope.scroll.to){
             $scope.mainDiv.scrollTop-=1;
           }else{

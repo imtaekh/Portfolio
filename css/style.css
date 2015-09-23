@@ -49,13 +49,13 @@ a:link{
       -ms-transform: translate(-50%, -50%);
      -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
-     -moz-box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
-          box-shadow: 10px 20px 50px -25px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 25px 45px -25px rgba(0,0,0,0.60);
+     -moz-box-shadow: 10px 25px 45px -25px rgba(0,0,0,0.60);
+          box-shadow: 10px 25px 45px -25px rgba(0,0,0,0.60);
 }
 .content{
+  overflow-x: hidden;
   padding: 0 25px;
   color: #434A54;
 }
@@ -74,6 +74,7 @@ nav{
   overflow: auto;
   color:white;
   text-align: right;
+  z-index: 100;
 }
 nav h1{
   float: left;
@@ -120,17 +121,18 @@ nav .actived{
 }
 .gear{
   position: absolute;
-  transform: translate(-50%, -50%);
   z-index: -1;
 }
 .gear1{
   width: 300px;
-  left: 100%;
+  top: -150px;
+  right: -150px;
   -webkit-animation: gear_one 12s linear infinite;
 }
 .gear2{
   width: 200px;
-  top: 100%;
+  bottom: -100px;
+  left: -100px;
   -webkit-animation: gear_two 5s linear infinite;
 }
 .welcome h1{
@@ -150,14 +152,14 @@ nav .actived{
   text-align: center;
 }
 .welcome .welcome_menu_item{
+  line-height: 30px;
   overflow: hidden;
   display: inline-block;
   margin: 5px 30px;
-  height: 120px;
+  height: 150px;
   list-style-type: none;
   cursor: pointer;
   padding: 10px 10px;
-  border-radius: 10px;
 }
 .welcome .welcome_menu_item:first-child{
   margin-left: 0;
@@ -213,8 +215,9 @@ nav .actived{
   right: 100px;
 }
 .skills .shadow_down{
+  margin-top: 340px;
   margin-bottom: 50px;
-  height: 400px;
+  height: 60px;
 -webkit-box-shadow: 0px 15px 30px -25px rgba(0,0,0,0.75);
    -moz-box-shadow: 0px 15px 30px -25px rgba(0,0,0,0.75);
         box-shadow: 0px 15px 30px -25px rgba(0,0,0,0.75);
@@ -359,19 +362,31 @@ nav .actived{
 }
 @-webkit-keyframes gear_one {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+        -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 
   to {
-    transform: translate(-50%, -50%) rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+       -moz-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 @-webkit-keyframes gear_two {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+        -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+        -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
