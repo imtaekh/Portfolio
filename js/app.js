@@ -34,7 +34,6 @@
       ];
       setTimeout(function () {
         $scope.$apply(function () {
-          console.log(document.getElementById("section04").offsetTop);
           $scope.menuItem[0].yStart=document.getElementById("section02").offsetTop;
           $scope.menuItem[0].yEnd=document.getElementById("section03").offsetTop;
           $scope.menuItem[1].yStart=document.getElementById("section03").offsetTop;
@@ -42,11 +41,14 @@
           $scope.menuItem[2].yStart=document.getElementById("section04").offsetTop;
           $scope.menuItem[2].yEnd=document.getElementById("section04").offsetTop+document.getElementById("section04").offsetHeight;
         });
-      },1000);
+      },3000);
 
-      $scope.moveTo=function (target) {
+      $scope.moveTo=function (target, offset) {
         var currentY=$scope.mainDiv.scrollTop;
-        if(target) $scope.scroll.to=document.getElementById(target).offsetTop;
+        
+        if(target) $scope.scroll.to  = document.getElementById(target).offsetTop;
+        if(offset) $scope.scroll.to += document.getElementById(offset).offsetTop;
+
         clearInterval($scope.scroll.interval);
         $scope.scroll.interval=setInterval(function () {
           if($scope.mainDiv.scrollTop<$scope.scroll.to-10){
@@ -93,6 +95,9 @@
             $scope.scroll.interval=null;
           }
           $scope.scroll.current=currentY;
+          if(currentY>$scope.menuItem[1].yStart && currentY+ $scope.mainDiv.clientHeight <$scope.menuItem[1].yEnd){
+            document.querySelector('.side_bar').style.top=currentY-$scope.menuItem[1].yStart+20+"px";
+          }
         });
       });
     }]);
