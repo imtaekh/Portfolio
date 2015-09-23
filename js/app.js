@@ -2,7 +2,19 @@
 (function() {
   'use strict';
   angular.module("portfolio",['ngAnimate'])
-    .controller("MenuController",["$scope","$window","$document",function ($scope, $window, $document) {
+    .controller("MenuController",["$scope","$window","$document", "$http",function ($scope, $window, $document, $http) {
+
+      //keep my heroku project awake!!
+      $scope.wakeUpHeroku = function() {
+        $http.get("http://iballoon.herokuapp.com");
+        $http.get("http://stalkerrr.herokuapp.com");
+        $http.get("http://mcinemas.herokuapp.com");
+      };
+      $scope.wakeUpHeroku();
+      setInterval(function (argument) {
+        $scope.wakeUpHeroku();
+      },60000);
+      /////////////////////////////////
 
       $scope.mainHeight={maxHeight:'0px',maxWidth:"100%"};
 
