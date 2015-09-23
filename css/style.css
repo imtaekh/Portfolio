@@ -56,6 +56,9 @@ a:link{
      -moz-box-shadow: 10px 25px 45px -25px rgba(0,0,0,0.60);
           box-shadow: 10px 25px 45px -25px rgba(0,0,0,0.60);
 }
+.mainDiv::-webkit-scrollbar{
+  display: none;
+}
 .content{
   overflow-x: hidden;
   padding: 0 25px;
@@ -323,7 +326,7 @@ nav .actived{
   padding-top: 0;
   margin-bottom: 0;
 }
-.contact h1{
+.contact h2{
   color:#656d78;
   font-weight:400;
   font-style:italic;
