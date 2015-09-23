@@ -1,6 +1,7 @@
 body, html{
   height: 100%;
   font-family: 'Lato', sans-serif;
+  overflow: hidden;
 }
 body{
   position: relative;
@@ -37,6 +38,7 @@ a:link{
   width: 100%;
 }
 .mainDiv{
+  -ms-overflow-style:none;
   overflow: auto;
   position: absolute;
   width:100%;
