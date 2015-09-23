@@ -232,18 +232,36 @@ nav .actived{
   z-index: -1;
 }
 .portfolio article{
-  padding: 20px 0 50px 70px;
+  padding: 20px 0 20px 80px;
   overflow: auto;
 }
 .portfolio .side_bar{
   text-align: center;
-  left:-8px;
+  left: -4px;
   position: absolute;
   width: 66px;
-  padding: 20px 0;
-  background:-webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Safari 5.1 to 6.0 */
-  background:     -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Opera 11.1 to 12.0 */
-  background:   -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Firefox 3.6 to 15 */
+  padding: 40px 0;
+  background:
+
+
+
+
+
+  -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Safari 5.1 to 6.0 */
+  background:
+
+
+
+
+
+  -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Opera 11.1 to 12.0 */
+  background:
+
+
+
+
+
+  -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Firefox 3.6 to 15 */
   background:        linear-gradient(rgba(0,0,0,0), rgba(0,200,255,0.25) 5%, rgba(0, 200, 255, 0.25) 95%, rgba(0,0,0,0));/* Standard syntax */
   transition: top, 0.1s;
 }
@@ -264,7 +282,7 @@ nav .actived{
   width: 200px;
   float: right;
   border: 7px solid #fcfcfc;
-  margin: 40px 0 0 10px;
+  margin: 40px 0 0 20px;
   -webkit-box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
   box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
