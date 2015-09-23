@@ -80,6 +80,7 @@ nav{
 }
 nav h1{
   float: left;
+  font-size: 1.5em;
   margin: 17px 10px;
 }
 nav li{
@@ -142,6 +143,7 @@ nav .actived{
           animation: gear_two 5s linear infinite;
 }
 .welcome h1{
+  font-size: 1.5em;
   margin: 15px;
   color: #f35626;
   background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
@@ -249,7 +251,7 @@ nav .actived{
   margin-bottom: 50px;
   overflow: auto;
 }
-.about h1, .about h4, .about p{
+.about h3, .about h4, .about p{
   margin: 10px 0;
 }
 .about article img{
@@ -262,7 +264,7 @@ nav .actived{
 .about article div{
   padding: 20px;
 }
-.about h1 span{
+.about h3 span{
   font-size: 0.9em;
   font-weight: 300;
   font-style: italic;
@@ -300,7 +302,7 @@ nav .actived{
   border: 1px solid rgb(103, 103, 103);
   cursor: pointer;
 }
-.portfolio h1, .portfolio h4, .portfolio p{
+.portfolio h3, .portfolio h4, .portfolio p{
   margin: 10px 0;
 }
 .portfolio h4{
