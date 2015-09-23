@@ -128,12 +128,16 @@ nav .actived{
   top: -150px;
   right: -150px;
   -webkit-animation: gear_one 12s linear infinite;
+     -moz-animation: gear_one 12s linear infinite;
+          animation: gear_one 12s linear infinite;
 }
 .gear2{
   width: 200px;
   bottom: -100px;
   left: -100px;
   -webkit-animation: gear_two 5s linear infinite;
+     -moz-animation: gear_two 5s linear infinite;
+          animation: gear_two 5s linear infinite;
 }
 .welcome h1{
   margin: 15px;
@@ -142,6 +146,8 @@ nav .actived{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 60s infinite linear;
+     -moz-animation: hue 60s infinite linear;
+          animation: hue 60s infinite linear;
 }
 .welcome small{
   font-size: 0.7em;
@@ -189,6 +195,8 @@ nav .actived{
   font-style: italic;
   left: 150%;
   -webkit-animation: fromRight 1s ease 2s forwards;
+     -moz-animation: fromRight 1s ease 2s forwards;
+          animation: fromRight 1s ease 2s forwards;
 }
 .welcome .summary span{
   color: black;
@@ -341,15 +349,6 @@ nav .actived{
   width: 100%;
   text-align: center;
 }
-@-webkit-keyframes fromRight {
-  from {
-    left: 100%;
-  }
-
-  to {
-    left: 0;
-  }
-}
 
 @-webkit-keyframes hue {
   from {
@@ -360,33 +359,82 @@ nav .actived{
     -webkit-filter: hue-rotate(-360deg);
   }
 }
+
+@-webkit-keyframes fromRight {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+@-moz-keyframes fromRight {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+@keyframes fromRight {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
 @-webkit-keyframes gear_one {
   from {
-        -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@-moz-keyframes gear_one {
+  from {
        -moz-transform: rotate(0deg);
+  }
+
+  to {
+       -moz-transform: rotate(-360deg);
+  }
+}
+@keyframes gear_one {
+  from {
             transform: rotate(0deg);
   }
 
   to {
-        -ms-transform: rotate(-360deg);
-    -webkit-transform: rotate(-360deg);
-       -moz-transform: rotate(-360deg);
             transform: rotate(-360deg);
   }
 }
 @-webkit-keyframes gear_two {
   from {
-        -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes gear_two {
+  from {
        -moz-transform: rotate(0deg);
+  }
+  to {
+       -moz-transform: rotate(360deg);
+  }
+}
+@keyframes gear_two {
+  from {
             transform: rotate(0deg);
   }
-
   to {
-        -ms-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-       -moz-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
