@@ -245,6 +245,7 @@ nav .actived{
   background:     -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Opera 11.1 to 12.0 */
   background:   -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0));/* For Firefox 3.6 to 15 */
   background:        linear-gradient(rgba(0,0,0,0), rgba(0,200,255,0.25) 5%, rgba(0, 200, 255, 0.25) 95%, rgba(0,0,0,0));/* Standard syntax */
+  transition: top, 0.1s;
 }
 .portfolio .side_bar img{
   width: 50px;
@@ -267,6 +268,35 @@ nav .actived{
   -webkit-box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
   box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
+}
+.contact{
+  padding-top: 50px;
+}
+.contact h1{
+  color:#656d78;
+  font-weight:400;
+  font-style:italic;
+  line-height: 40px;
+}
+.contact .links{
+  padding: 40px 0;
+  margin-left: 250px;
+  border-left: 1px solid black;
+  padding-left: 10px;
+}
+.contact p{
+  overflow: auto;
+}
+.contact img{
+  float:left;
+  height: 30px;
+}
+.contact a{
+  float: left;
+  margin: 5px;
+}
+.copyright{
+  text-align: center;
 }
 @-webkit-keyframes fromRight {
   from {

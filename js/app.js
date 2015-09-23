@@ -45,7 +45,7 @@
 
       $scope.moveTo=function (target, offset) {
         var currentY=$scope.mainDiv.scrollTop;
-        
+
         if(target) $scope.scroll.to  = document.getElementById(target).offsetTop;
         if(offset) $scope.scroll.to += document.getElementById(offset).offsetTop;
 
@@ -95,6 +95,7 @@
             $scope.scroll.interval=null;
           }
           $scope.scroll.current=currentY;
+          //portfolio side bar control
           if(currentY>$scope.menuItem[1].yStart && currentY+ $scope.mainDiv.clientHeight <$scope.menuItem[1].yEnd){
             document.querySelector('.side_bar').style.top=currentY-$scope.menuItem[1].yStart+20+"px";
           }
