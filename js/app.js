@@ -109,10 +109,14 @@
           }
           $scope.scroll.current=currentY;
           //portfolio side bar control
-          if(currentY > $scope.menuItem[1].yStart && currentY < $scope.menuItem[1].yEnd-document.querySelector(".side_bar").clientHeight){
+          var sideBarHeight = document.querySelector(".side_bar").clientHeight;
+          var portfolioHeight = $scope.menuItem[1].yEnd-$scope.menuItem[1].yStart;
+          if(currentY > $scope.menuItem[1].yStart && currentY < $scope.menuItem[1].yEnd-sideBarHeight){
             document.querySelector('.side_bar').style.top=currentY-$scope.menuItem[1].yStart+20+"px";
-          } else if(currentY<$scope.menuItem[1].yStart && document.querySelector('.side_bar').style.top!="20px"){
+          } else if(currentY < $scope.menuItem[1].yStart && document.querySelector('.side_bar').style.top!="20px"){
             document.querySelector('.side_bar').style.top="20px";
+          } else if(currentY > $scope.menuItem[1].yEnd-sideBarHeight){
+            document.querySelector('.side_bar').style.top=portfolioHeight-sideBarHeight+"px";
           }
         });
       });
