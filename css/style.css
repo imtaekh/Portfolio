@@ -62,7 +62,7 @@ a:link{
 section{
   position: relative;
   padding-top: 20px;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
 }
 section div{
   overflow: auto;
@@ -115,6 +115,8 @@ nav .actived{
 }
 .welcome{
   height: 380px;
+  padding-top: 10px;
+  margin-bottom: 0;
 }
 .welcome h1{
   margin: 15px;
@@ -168,7 +170,7 @@ nav .actived{
   font-size: 19px;
   font-weight: 300;
   font-style: italic;
-  left: 100%;
+  left: 150%;
   -webkit-animation: fromRight 1s ease 2s forwards;
 }
 .welcome .summary span{
@@ -180,7 +182,7 @@ nav .actived{
   text-align: center;
 }
 .skills .shadow_down{
-    height: 100px;
+    height: 400px;
 -webkit-box-shadow: 0px 15px 30px -25px rgba(0,0,0,0.75);
    -moz-box-shadow: 0px 15px 30px -25px rgba(0,0,0,0.75);
         box-shadow: 0px 15px 30px -25px rgba(0,0,0,0.75);
@@ -270,6 +272,7 @@ nav .actived{
 }
 .contact{
   padding-top: 50px;
+  margin-bottom: 0;
 }
 .contact h1{
   color:#656d78;
@@ -295,6 +298,9 @@ nav .actived{
   margin: 5px;
 }
 .copyright{
+  position: absolute;
+  bottom:0px;
+  width: 100%;
   text-align: center;
 }
 @-webkit-keyframes fromRight {

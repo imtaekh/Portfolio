@@ -24,16 +24,14 @@
     <div class="container">
       <div ng-view class="mainDiv" ng-style="mainHeight">
         <div class="content">
-          <section id="section00">
-            <div class="welcome">
-              <h1>Imtaek Hong <small>| Full Stack Web Developer |</small></h1>
-              <p class="summary">
-                "I am passionate about coding and apt at problem solving. I specialized in | <span>Node JS</span> | <span>Angular JS</span> | <span>Javascript</span> | <span>Ruby on rails</span> | <span>HTML/CSS</span> | <span>jQuery</span> | <span>Github</span> |; I also have experience with  | <span>C/C++</span> | <span>Java</span> | <span>Meteor JS</span> | I'm a quick learner and eager to learn a lot more. I'm ready to join your team in order to create something awesome together!"</p>
-              <div class="welcome_menu">
-                <div ng-repeat="menu in welcomeMenu" ng-click="moveTo(menu.targetId)" class="fade welcome_menu_item">
-                  <img ng-src="{{menu.imgUrl}}"/><br>
-                  {{menu.name}}
-                </div>
+          <section id="section00" class="welcome">
+            <h1>Imtaek Hong <small>| Full Stack Web Developer |</small></h1>
+            <p class="summary">
+              "I am passionate about coding and apt at problem solving. I specialized in | <span>Node JS</span> | <span>Angular JS</span> | <span>Javascript</span> | <span>Ruby on rails</span> | <span>HTML/CSS</span> | <span>jQuery</span> | <span>Github</span> |; I also have experience with  | <span>C/C++</span> | <span>Java</span> | <span>Meteor JS</span> | I'm a quick learner and eager to learn a lot more. I'm ready to join your team in order to create something awesome together!"</p>
+            <div class="welcome_menu">
+              <div ng-repeat="menu in welcomeMenu" ng-click="moveTo(menu.targetId)" class="fade welcome_menu_item">
+                <img ng-src="{{menu.imgUrl}}"/><br>
+                {{menu.name}}
               </div>
             </div>
           </section>
@@ -134,7 +132,7 @@
                 <h1>Stalker App</h1>
                 <h4>NodeJS | ExpressJS | MongoDB | Javascript | jQuery | HTML | CSS | Google Plus Auth & API | Twitter Auth & API | Facebook Auth | Instagram API | Youtube API | Tumblr API</h4>
                 <p>A website you can see someone else's public feeds from Instagram, Google Plus, Twitter, Youtube and Tumblr in a single page(even without login each services). This was a group project, I worked on authentication api(local, facebook, google, twitter) and twitter, tumblr panels.</p>
-                <p><a href="http://stalkerrr.herokuapp.com" target="_blank">hhttp://stalkerrr.herokuapp.com</a></p>
+                <p><a href="http://stalkerrr.herokuapp.com" target="_blank">http://stalkerrr.herokuapp.com</a></p>
               </div>
             </article>
 
@@ -198,8 +196,8 @@
               <p><img src="./images/contact_github.png"><a href="https://github.com/imtaekh" target="_blank">https://github.com/imtaekh</a></p>
               <p><img src="./images/contact_linkedin.png"><a href="http://www.linkedin.com/in/imtaekhong" target="_blank">http://www.linkedin.com/in/imtaekhong</a></p>
             </div>
+            <p class="copyright">2015 © Imtaek Hong</p>
           </section>
-          <p class="copyright">2015 © Imtaek Hong</p>
         </div>
       </div>
     </div>

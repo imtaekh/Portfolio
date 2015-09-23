@@ -22,6 +22,7 @@
         setTimeout(function () {
           $scope.$apply(function () {
             $scope.mainHeight={maxHeight:"400px", maxWidth:'700px',transition: "max-height, 3s"};
+            document.querySelector('.contact').style.height=document.querySelector('.container').clientHeight+"px"
           });
         }, 200);
         setTimeout(function () {
@@ -108,8 +109,10 @@
           }
           $scope.scroll.current=currentY;
           //portfolio side bar control
-          if(currentY>$scope.menuItem[1].yStart && currentY+ $scope.mainDiv.clientHeight <$scope.menuItem[1].yEnd){
+          if(currentY > $scope.menuItem[1].yStart && currentY+$scope.mainDiv.clientHeight < $scope.menuItem[1].yEnd+220){
             document.querySelector('.side_bar').style.top=currentY-$scope.menuItem[1].yStart+20+"px";
+          } else if(currentY<$scope.menuItem[1].yStart && document.querySelector('.side_bar').style.top!="20px"){
+            document.querySelector('.side_bar').style.top="20px";
           }
         });
       });
