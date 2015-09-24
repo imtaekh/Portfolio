@@ -82,7 +82,7 @@
         $scope.$apply(function () {
           var currentY = $scope.mainDiv.scrollTop;
           var contentStart = document.getElementById('section01').offsetTop;
-          if(currentY > 0 && currentY < $scope.contentStart){
+          if(currentY > 0 && currentY < contentStart){
             // force scroll zone
             if(currentY>$scope.scroll.current){
               if($scope.scroll.to){
