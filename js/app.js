@@ -35,7 +35,6 @@
       };
 
       $scope.mainDiv = document.querySelector('.mainDiv');
-      $scope.contentStart = document.getElementById('section01').offsetTop;
       $scope.scroll={action:false,current:0,to:null,interval:null};
 
       $scope.visibleMenu=[];
@@ -81,7 +80,8 @@
       };
       $scope.mainDiv.addEventListener('scroll', function () {
         $scope.$apply(function () {
-          var currentY=$scope.mainDiv.scrollTop;
+          var currentY = $scope.mainDiv.scrollTop;
+          var contentStart = document.getElementById('section01').offsetTop;
           if(currentY > 0 && currentY < $scope.contentStart){
             // force scroll zone
             if(currentY>$scope.scroll.current){
