@@ -10,6 +10,9 @@ body{
   background-image: url("../images/bg.jpg");
   background-size: cover;
 }
+h1{
+  font-weight: 900;
+}
 a{
   color:tomato;
   text-decoration: none;
@@ -287,6 +290,9 @@ nav .actived{
 .portfolio article{
   padding: 20px 0 20px 80px;
   overflow: auto;
+}
+.portfolio p{
+  font-size: 0.9em;
 }
 .portfolio .side_bar{
   text-align: center;
