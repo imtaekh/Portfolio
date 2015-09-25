@@ -96,7 +96,6 @@ nav li{
 nav .menu{
   cursor: pointer;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
-  transition: border-bottom, 1s;
 }
 nav .menu:hover{
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
