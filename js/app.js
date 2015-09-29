@@ -121,7 +121,72 @@
           } else if(currentY > $scope.menuItem[1].yEnd-sideBarHeight){
             document.querySelector('.side_bar').style.top=portfolioHeight-sideBarHeight+"px";
           }
+          if($scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight && $scope.stars.interval===null){
+            $scope.stars.start();
+          }
         });
       });
+      $scope.stars = {
+        MAX_COUNT: 5,
+        INTERVAL_MILISECOND: 60,
+        HEIGHT: undefined,
+        TARGET: document.querySelector('#section04'),
+        frameCount: 0,
+        interval: null,
+        array:[],
+        start: function () {
+          if(!this.interval){
+            this.HEIGHT=document.querySelector('#section04').clientHeight/2;
+            this.frameCount=0;
+            this.generator();
+            this.interval=setInterval(this.loop,this.INTERVAL_MILISECOND);
+          }
+        },
+        end: function () {
+          this.interval=null;
+        },
+        generator: function () {
+
+          if(this.array.length<this.MAX_COUNT && $scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight){
+
+            var div = document.createElement("div");
+            div.innerText="☆";
+            div.className="star";
+            div.style.left=(Math.random()*100)+"%";
+            div.style.bottom="-10px";
+            div.style.fontSize=10+parseInt(Math.random()*50)+"px";
+            div.dataset.vel=5+parseInt(Math.random()*5);
+            this.TARGET.appendChild(div);
+            this.array.push(div);
+          }
+        },
+        destroyer: function () {
+
+        },
+        loop: function () {
+          $scope.stars.frameCount++;
+          if($scope.stars.frameCount%10===0){
+            $scope.stars.generator();
+          }
+          $scope.stars.array.forEach(function (el,i,arr) {
+            if(el!="deleted"){
+              var newBottom=parseInt(el.style.bottom)+parseInt(el.dataset.vel);
+              el.style.bottom=newBottom+"px";
+              if(newBottom>$scope.stars.HEIGHT){
+                el.parentNode.removeChild(el);
+                arr[i]="deleted";
+              }
+            } else {
+              if(el=="deleted"){
+                  arr.splice(i,1);
+                  i--;
+                }
+            }
+          });
+          // requestAnimationFrame($scope.stars.loop);
+        }
+      };
+
+
     }]);
 }());

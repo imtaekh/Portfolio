@@ -334,7 +334,6 @@ nav .actived{
   box-shadow: 5px 10px 20px -10px rgba(0,0,0,0.75);
 }
 .contact{
-  overflow: auto;
   padding-top: 0;
   margin-bottom: 0;
 }
@@ -343,7 +342,7 @@ nav .actived{
   font-weight:400;
   font-style:italic;
   line-height: 40px;
-  margin: 30px 0;
+  padding: 30px 0;
 }
 .contact .links{
   padding: 40px 0;
@@ -367,6 +366,10 @@ nav .actived{
   bottom:0px;
   width: 100%;
   text-align: center;
+}.star{
+  z-index: -1;
+  overflow: visible;
+  position: absolute;
 }
 
 @-webkit-keyframes hue {
