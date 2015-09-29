@@ -13,7 +13,7 @@
       $scope.wakeUpHeroku();
       setInterval(function (argument) {
         $scope.wakeUpHeroku();
-      },60000);
+      },300000);
       /////////////////////////////////
 
       $scope.mainHeight={maxHeight:'0px',maxWidth:"100%"};
@@ -123,6 +123,7 @@
           }
           if($scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight && $scope.stars.interval===null){
             $scope.stars.start();
+            console.log("Start");
           }
         });
       });
@@ -146,7 +147,7 @@
         generator: function () {
           if(this.array.length<this.MAX_COUNT && $scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight){
             var div = document.createElement("div");
-            div.innerText=this.list[parseInt(Math.random()*this.list.length-1)];
+            div.innerHTML=this.list[parseInt(Math.random()*this.list.length-1)];
             div.className="star";
             div.style.left=(Math.random()*100)+"%";
             div.style.fontSize=25+parseInt(Math.random()*20)+"px";
@@ -182,6 +183,7 @@
             }
           });
           if($scope.stars.array.length===0){
+            console.log("end");
             clearInterval($scope.stars.interval);
             $scope.stars.interval = null;
           }
