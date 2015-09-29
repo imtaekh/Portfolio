@@ -367,6 +367,11 @@ nav .actived{
   width: 100%;
   text-align: center;
 }.star{
+  text-align: center;
+      -ms-transform: translate(-50%,0);
+     -moz-transform: translate(-50%,0);
+  -webkit-transform: translate(-50%,0);
+          transform: translate(-50%,0);
   z-index: -1;
   overflow: visible;
   position: absolute;

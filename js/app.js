@@ -123,20 +123,22 @@
           }
           if($scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight && $scope.stars.interval===null){
             $scope.stars.start();
+            console.log("Start");
           }
         });
       });
       $scope.stars = {
-        MAX_COUNT: 5,
+        MAX_COUNT: 4,
         INTERVAL_MILISECOND: 60,
         HEIGHT: undefined,
         TARGET: document.querySelector('#section04'),
+        list:["MEAN STACK","MONGO DB","EXPRESS JS","ANGULAR JS", "NODE JS", "JAVASCRIPT", "SOCKET.IO"," METEOR JS", "RUBY ON RAILS", "RUBY", "POSTGRESQL", "JQUERY", "HTML/CSS", "BOOTSTRAP", "GIT/GITHUB"],
         frameCount: 0,
         interval: null,
         array:[],
         start: function () {
           if(!this.interval){
-            this.HEIGHT=document.querySelector('#section04').clientHeight/2;
+            this.HEIGHT=parseInt(document.querySelector('#section04').clientHeight/2);
             this.frameCount=0;
             this.generator();
             this.interval=setInterval(this.loop,this.INTERVAL_MILISECOND);
@@ -146,22 +148,21 @@
           this.interval=null;
         },
         generator: function () {
-
           if(this.array.length<this.MAX_COUNT && $scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight){
-
             var div = document.createElement("div");
-            div.innerText="☆";
+            div.innerText=this.list[parseInt(Math.random()*this.list.length-1)];
             div.className="star";
             div.style.left=(Math.random()*100)+"%";
-            div.style.bottom="-10px";
-            div.style.fontSize=10+parseInt(Math.random()*50)+"px";
+            div.style.fontSize=25+parseInt(Math.random()*20)+"px";
+            div.style.bottom="-"+div.style.fontSize;
+            div.style.width="100%";
+            div.style.transition=2+parseInt(Math.random()*3)+"s linear";
+            div.style.color="rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+            div.style.opacity=0.8;
             div.dataset.vel=5+parseInt(Math.random()*5);
             this.TARGET.appendChild(div);
             this.array.push(div);
           }
-        },
-        destroyer: function () {
-
         },
         loop: function () {
           $scope.stars.frameCount++;
@@ -170,20 +171,25 @@
           }
           $scope.stars.array.forEach(function (el,i,arr) {
             if(el!="deleted"){
-              var newBottom=parseInt(el.style.bottom)+parseInt(el.dataset.vel);
-              el.style.bottom=newBottom+"px";
-              if(newBottom>$scope.stars.HEIGHT){
+              var percentage = parseInt(getComputedStyle(el).bottom)/$scope.stars.HEIGHT;
+              if(parseInt(el.style.bottom)<0){
+                el.style.bottom=$scope.stars.HEIGHT+"px";
+                el.style.opacity=0;
+              }
+              if(percentage>=1){
                 el.parentNode.removeChild(el);
                 arr[i]="deleted";
               }
             } else {
-              if(el=="deleted"){
-                  arr.splice(i,1);
-                  i--;
-                }
+              arr.splice(i,1);
+              i--;
             }
           });
-          // requestAnimationFrame($scope.stars.loop);
+          if($scope.stars.array.length===0){
+            console.log("end");
+            clearInterval($scope.stars.interval);
+            $scope.stars.interval = null;
+          }
         }
       };
 
