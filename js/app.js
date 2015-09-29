@@ -123,7 +123,6 @@
           }
           if($scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight && $scope.stars.interval===null){
             $scope.stars.start();
-            console.log("Start");
           }
         });
       });
@@ -143,9 +142,6 @@
             this.generator();
             this.interval=setInterval(this.loop,this.INTERVAL_MILISECOND);
           }
-        },
-        end: function () {
-          this.interval=null;
         },
         generator: function () {
           if(this.array.length<this.MAX_COUNT && $scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight){
@@ -186,7 +182,6 @@
             }
           });
           if($scope.stars.array.length===0){
-            console.log("end");
             clearInterval($scope.stars.interval);
             $scope.stars.interval = null;
           }
