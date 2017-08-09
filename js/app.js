@@ -121,7 +121,10 @@
           } else if(currentY > $scope.menuItem[1].yEnd-sideBarHeight){
             document.querySelector('.side_bar').style.top=portfolioHeight-sideBarHeight+"px";
           }
-          if($scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight && $scope.stars.interval===null){
+          console.log("$scope.mainDiv.scrollTop: ",$scope.mainDiv.scrollTop);
+          console.log("$scope.mainDiv.scrollHeight: ",$scope.mainDiv.scrollHeight);
+          console.log("$scope.mainDiv.clientHeight: ",$scope.mainDiv.clientHeight);
+          if($scope.mainDiv.scrollTop>=document.querySelector(".contact").offsetTop && $scope.stars.interval===null){
             $scope.stars.start();
             console.log("Start");
           }
@@ -145,18 +148,18 @@
           }
         },
         generator: function () {
-          if(this.array.length<this.MAX_COUNT && $scope.mainDiv.scrollTop+$scope.mainDiv.clientHeight == $scope.mainDiv.scrollHeight){
+          console.log("generator");
+          if(this.array.length<this.MAX_COUNT){
             var div = document.createElement("div");
             div.innerHTML=this.list[parseInt(Math.random()*this.list.length-1)];
             div.className="star";
             div.style.left=(Math.random()*100)+"%";
             div.style.fontSize=25+parseInt(Math.random()*20)+"px";
-            div.style.bottom="-"+div.style.fontSize;
-            div.style.width="100%";
+            div.style.bottom="-1px";
+            div.style.width="0px";
             div.style.transition=2+parseInt(Math.random()*3)+"s linear";
             div.style.color="rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
             div.style.opacity=0.8;
-            div.dataset.vel=5+parseInt(Math.random()*5);
             this.TARGET.appendChild(div);
             this.array.push(div);
           }
@@ -169,6 +172,7 @@
           $scope.stars.array.forEach(function (el,i,arr) {
             if(el!="deleted"){
               var percentage = parseInt(getComputedStyle(el).bottom)/$scope.stars.HEIGHT;
+              console.log(parseInt(el.style.bottom));
               if(parseInt(el.style.bottom)<0){
                 el.style.bottom=$scope.stars.HEIGHT+"px";
                 el.style.opacity=0;

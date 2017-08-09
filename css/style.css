@@ -335,7 +335,7 @@ nav .actived{
 }
 .contact{
   padding-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 50px;
 }
 .contact h2{
   color:#656d78;
@@ -350,6 +350,7 @@ nav .actived{
   margin-left: 250px;
   border-left: 1px solid black;
   padding-left: 10px;
+  margin-bottom: 100px;
 }
 .contact p{
   overflow: auto;
@@ -363,11 +364,10 @@ nav .actived{
   margin: 5px;
 }
 .copyright{
-  position: absolute;
-  bottom:0px;
   width: 100%;
   text-align: center;
-}.star{
+}
+.star{
   text-align: center;
       -ms-transform: translate(-50%,0);
      -moz-transform: translate(-50%,0);
@@ -376,6 +376,7 @@ nav .actived{
   z-index: -1;
   overflow: visible;
   position: absolute;
+  white-space: nowrap;
 }
 
 @-webkit-keyframes hue {
