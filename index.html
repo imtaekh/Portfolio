@@ -29,7 +29,7 @@
             <img src="./images/gear2.png" class="gear gear2" alt="" />
             <h1>Imtaek Hong <small>|  Web Developer |</small></h1>
             <p class="summary">
-              "I am passionate about coding and apt at problem solving. I specialized in | <span>Node JS</span> | <span>Angular JS</span> | <span>Javascript</span> | <span>Ruby on rails</span> | <span>HTML/CSS</span> | <span>jQuery</span> | <span>Github</span> |; I also have experience with  | <span>C/C++</span> | <span>Java</span> | <span>Meteor JS</span> |. I'm a quick learner and eager to learn a lot more. I'm ready to join your team in order to create something awesome together!"</p>
+              "I am passionate about coding and apt at problem solving. I specialized in | <span>Node JS</span> | <span>Angular</span> | <span>REST APIs</span> | <span>Javascript</span> | <span>HTML/CSS</span> | <span>jQuery</span> | <span>Github</span> |; I also have experience with  | <span>C/C++</span> | <span>Java</span> | <span>Meteor JS</span> | <span>Ruby on rails</span> | <span>Adobe Experience Manager(AEM)</span>. I'm a quick learner and eager to learn a lot more. I'm ready to join your team in order to create something awesome together!"</p>
             <div class="welcome_menu">
               <div ng-repeat="menu in welcomeMenu" ng-click="moveTo(menu.targetId)" class="fade welcome_menu_item">
                 <img ng-src="{{menu.imgUrl}}"/><br>
@@ -45,7 +45,7 @@
               <img src="./images/skills_express.png" class="right"/>
               <h1>EXPRESS JS</h1>
               <img src="./images/skills_angular.png" class="left100"/>
-              <h1>ANGULAR JS</h1>
+              <h1>ANGULAR</h1>
               <img src="./images/skills_nodejs.png" class="right100"/>
               <h1>NODE JS</h1>
               <img src="./images/skills_js.png" class="left"/>
@@ -81,7 +81,7 @@
             <div class="line"></div>
             <article>
               <img src="./images/about_me.jpg" />
-              <div>
+              <div class="me">
                 <h3>Imtaek Hong</h3>
                 <p>I was born and raised in South Korea and moved to the US in 2012 and obtained permanent residence(Green Card holder, eligible to work without visa sponsorship).</p>
                 <!--<p>I'm currently looking for a job.</p>-->
@@ -90,12 +90,22 @@
             </article>
 
             <article>
+              <img src="./images/about_haea.jpg" />
+              <div>
+                <i>Oct 2015 ~ Present</i>
+                <h3>Hyundai America <span>Irvine, CA</span></h3>
+                <h4>Full Stack Web Developer</h4>
+                <p>Debug and fix issues from existing websites by updating front end, back end, database and APIs, Schedule requested enhancements(new features, improving performance and creating new APIs) into sprints and implement them on time</p>
+              </div>
+            </article>
+
+            <article>
               <img src="./images/about_ga_ta.jpg" />
               <div>
-                <i>Oct 2015 ~ Oct 2015</i>
+                <i>Sep 2015 ~ Oct 2015</i>
                 <h3>General Assembly <span>Los Angeles, CA</span></h3>
                 <h4>Teaching Assistant</h4>
-                <p>Help students with their queries after class about codes, concepts and theories, also mentor students, drawing from experience​ as a former Web Development Immersive student.</p>
+                <p>Helped students with their queries after class about codes, concepts and theories, also mentored students, drawing from experience​ as a former Web Development Immersive student.</p>
               </div>
             </article>
 
@@ -141,6 +151,7 @@
           </section>
           <section id="section03" class="portfolio">
             <div class="side_bar">
+              <img src="./images/portfolio_mb2.jpg" ng-click="moveTo('portfolio07','section03')" title="iBalloon(Insta-Balloon)"/>
               <img src="./images/portfolio_project4.jpg" ng-click="moveTo('portfolio06','section03')" title="iBalloon(Insta-Balloon)"/>
               <img src="./images/portfolio_project3.jpg" ng-click="moveTo('portfolio05','section03')" title="Stalker App"/>
               <img src="./images/portfolio_project2.jpg" ng-click="moveTo('portfolio04','section03')" title="M Cinema"/>
@@ -149,10 +160,23 @@
               <img src="./images/portfolio_memo_calendar.jpg" ng-click="moveTo('portfolio01','section03')" title="Memo Calendar"/>
               <img src="./images/portfolio_space_fighter.jpg" ng-click="moveTo('portfolio00','section03')" title="Space Fighter"/>
             </div>
+
+            <article id="portfolio07">
+              <a href="http://www.a-mean-blog.com" target="_blank"><img src="./images/portfolio_mb2.jpg" alt="" /></a>
+              <div>
+                <h3>A-MEAN-Blog.com</h3>
+                <h4>MEAN Stack(MongoDB, ExpressJS, Angular, NodeJS) | HTML | CSS | Bootstrap</h4>
+                <p>It's made of MEAN Stack, teaches MEAN Stack.</p>
+                <p></p>
+                <p><a href="http://www.a-mean-blog.com" target="_blank">http://www.a-mean-blog.com</a></p>
+              </div>
+            </article>
+            <hr>
+
             <article id="portfolio06">
               <a href="http://iballoon.herokuapp.com" target="_blank"><img src="./images/portfolio_project4.jpg" alt="" /></a>
               <div>
-                <h3>iBalloon(Insta-Balloon)</h3>
+                <h3>iBalloon(General Assembly Project)</h3>
                 <h4>MEAN Stack(MongoDB, ExpressJS, AngularJS, NodeJS) | Javascript | Socket IO | Google MAP API | Instagram Auth & API | HTML | CSS | Bootstrap | Gulp | SASS</h4>
                 <p>Users select a photo from Instagram and set a destination and then are able to see the photo moving from their current location to the destination on google maps.</p>
                 <p>Users can also see other users’ photos traveling on the map</p>
@@ -164,7 +188,7 @@
             <article id="portfolio05">
               <a href="http://stalkerrr.herokuapp.com" target="_blank"><img src="./images/portfolio_project3.jpg" alt="" /></a>
               <div>
-                <h3>Stalker App(group project)</h3>
+                <h3>Stalker App(General Assembly Project)</h3>
                 <h4>NodeJS | ExpressJS | MongoDB | Javascript | jQuery | HTML | CSS | Google Plus Auth & API | Twitter Auth & API | Facebook Auth | Instagram API | Youtube API | Tumblr API</h4>
                 <p>Role: authentication APIs(local, facebook, google, twitter) and twitter panel, tumblr panel.</p>
                 <p>A website users can see other’s public feeds from Instagram, Google Plus, Twitter, Youtube and Tumblr in a single page - users do not need to log into each individual service.</p>
@@ -176,7 +200,7 @@
             <article id="portfolio04">
               <a href="http://mcinemas.herokuapp.com" target="_blank"><img src="./images/portfolio_project2.jpg" alt="" /></a>
               <div>
-                <h3>M Cinema</h3>
+                <h3>M Cinema(General Assembly Project)</h3>
                 <h4>Ruby on rails | PostgreSQL | Ruby | Javascript | jQuery | HTML | CSS</h4>
                 <p>A movie theater app. Users can see current playing movies, book tickets and see their booking history. Admin(ID:admin@mtheater.com, PASSWORD: admin) can add movies and create movie schedules.</p>
                 <p><a href="http://mcinemas.herokuapp.com" target="_blank">http://mcinemas.herokuapp.com</a></p>

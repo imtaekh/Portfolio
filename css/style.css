@@ -264,6 +264,7 @@ nav .actived{
   float: left;
   border: 10px solid #fcfcfc;
   margin-left: 10px;
+  margin-top: 15px;
   border-radius: 50%;
 }
 .about article div{
@@ -274,6 +275,9 @@ nav .actived{
   font-weight: 300;
   font-style: italic;
   padding-left: 10px;
+}
+.about .me{
+  margin-top: 10px;
 }
 .about i{
   font-family: 'Dancing Script', cursive;
