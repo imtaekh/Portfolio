@@ -121,12 +121,12 @@
           } else if(currentY > $scope.menuItem[1].yEnd-sideBarHeight){
             document.querySelector('.side_bar').style.top=portfolioHeight-sideBarHeight+"px";
           }
-          console.log("$scope.mainDiv.scrollTop: ",$scope.mainDiv.scrollTop);
-          console.log("$scope.mainDiv.scrollHeight: ",$scope.mainDiv.scrollHeight);
-          console.log("$scope.mainDiv.clientHeight: ",$scope.mainDiv.clientHeight);
+          // console.log("$scope.mainDiv.scrollTop: ",$scope.mainDiv.scrollTop);
+          // console.log("$scope.mainDiv.scrollHeight: ",$scope.mainDiv.scrollHeight);
+          // console.log("$scope.mainDiv.clientHeight: ",$scope.mainDiv.clientHeight);
           if($scope.mainDiv.scrollTop>=document.querySelector(".contact").offsetTop && $scope.stars.interval===null){
             $scope.stars.start();
-            console.log("Start");
+            // console.log("Start");
           }
         });
       });
@@ -148,7 +148,7 @@
           }
         },
         generator: function () {
-          console.log("generator");
+          // console.log("generator");
           if(this.array.length<this.MAX_COUNT){
             var div = document.createElement("div");
             div.innerHTML=this.list[parseInt(Math.random()*this.list.length-1)];
@@ -172,7 +172,7 @@
           $scope.stars.array.forEach(function (el,i,arr) {
             if(el!="deleted"){
               var percentage = parseInt(getComputedStyle(el).bottom)/$scope.stars.HEIGHT;
-              console.log(parseInt(el.style.bottom));
+              // console.log(parseInt(el.style.bottom));
               if(parseInt(el.style.bottom)<0){
                 el.style.bottom=$scope.stars.HEIGHT+"px";
                 el.style.opacity=0;
@@ -187,7 +187,7 @@
             }
           });
           if($scope.stars.array.length===0){
-            console.log("end");
+            // console.log("end");
             clearInterval($scope.stars.interval);
             $scope.stars.interval = null;
           }
